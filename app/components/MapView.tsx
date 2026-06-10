@@ -328,7 +328,7 @@ export default function MapView({ needs, initialCity, onBack }: MapViewProps) {
       <div className="px-4 pt-2 pb-3 bg-white">
         <button onClick={handleGetSuggestions} disabled={loading}
           className="w-full h-12 rounded-full bg-primary text-white font-bold text-sm tracking-wide disabled:opacity-50 active:scale-95 transition-all">
-          {loading ? "Recherche en cours..." : "Obtenir des suggestions"}
+          {loading ? "Recherche..." : "Suggestions"}
         </button>
       </div>
 

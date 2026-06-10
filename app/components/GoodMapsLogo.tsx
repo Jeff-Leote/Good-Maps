@@ -27,8 +27,8 @@ export default function GoodMapsLogo({ size = "md" }: LogoProps) {
         />
         {/* Inner white circle */}
         <circle cx="24" cy="18" r="7" fill="white" />
-        {/* Red dot in center */}
-        <circle cx="24" cy="18" r="3.5" fill="#E8554A" />
+        {/* Green dot in center */}
+        <circle cx="24" cy="18" r="3.5" className="fill-primary" />
         {/* Letter R shape */}
         <path
           d="M21 14.5H25.5C26.88 14.5 28 15.62 28 17C28 18.38 26.88 19.5 25.5 19.5H21V14.5Z"
@@ -39,7 +39,7 @@ export default function GoodMapsLogo({ size = "md" }: LogoProps) {
 
       {/* Title */}
       <div className={`font-black tracking-wider ${s.title} leading-none`}>
-        <span className="text-[#E8554A]">GOOD</span>
+        <span className="text-primary">GOOD</span>
         <span className="text-[#1a1a1a]"> MAPS</span>
       </div>
 

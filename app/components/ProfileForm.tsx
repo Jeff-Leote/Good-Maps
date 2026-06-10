@@ -24,7 +24,6 @@ const ACCESSIBILITY_OPTIONS = [
 ];
 
 export default function ProfileForm({ onSubmit, initialProfile }: ProfileFormProps) {
-  const [name, setName] = useState(initialProfile?.name ?? "");
   const [city, setCity] = useState(initialProfile?.city ?? "");
   const [selected, setSelected] = useState<string[]>(initialProfile?.needs ?? []);
 
@@ -36,7 +35,7 @@ export default function ProfileForm({ onSubmit, initialProfile }: ProfileFormPro
 
   function handleSubmit() {
     if (selected.length === 0) return;
-    onSubmit({ name: name.trim(), city: city.trim(), needs: selected });
+    onSubmit({ name: initialProfile?.name ?? "", city: city.trim(), needs: selected });
   }
 
   return (
@@ -53,20 +52,6 @@ export default function ProfileForm({ onSubmit, initialProfile }: ProfileFormPro
           Pour mieux personnaliser vos suggestions d&apos;activités, merci de
           remplir le formulaire.
         </p>
-
-        {/* Name */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Votre prénom (optionnel)
-          </label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Ex : Marie"
-            className="w-full h-11 px-4 rounded-full bg-gray-100 text-sm outline-none focus:ring-2 focus:ring-primary"
-          />
-        </div>
 
         {/* City */}
         <div className="mb-5">
@@ -106,7 +91,7 @@ export default function ProfileForm({ onSubmit, initialProfile }: ProfileFormPro
                 onClick={() => toggle(opt.id)}
                 className={`flex items-center gap-3 w-full px-4 py-3 rounded-2xl border-2 transition-all text-left ${
                   isSelected
-                    ? "border-primary bg-red-50"
+                    ? "border-primary bg-green-50"
                     : "border-gray-200 bg-gray-50"
                 }`}
               >
@@ -133,7 +118,7 @@ export default function ProfileForm({ onSubmit, initialProfile }: ProfileFormPro
           disabled={selected.length === 0}
           className="w-full h-12 rounded-full bg-primary text-white font-bold text-sm tracking-wide disabled:opacity-40 transition-opacity active:scale-95"
         >
-          Passer à la carte
+          Carte
         </button>
       </div>
     </div>

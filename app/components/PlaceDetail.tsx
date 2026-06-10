@@ -111,7 +111,7 @@ export default function PlaceDetail({ place, typeLabel, needs, onClose }: PlaceD
         aria-label="Fermer">✕</button>
 
       {/* Type badge */}
-      <span className="inline-block px-3 py-1 bg-red-50 text-primary text-xs font-semibold rounded-full mb-2">
+      <span className="inline-block px-3 py-1 bg-green-50 text-primary text-xs font-semibold rounded-full mb-2">
         {typeLabel}
       </span>
 
@@ -152,21 +152,21 @@ export default function PlaceDetail({ place, typeLabel, needs, onClose }: PlaceD
           <a href={place.website} target="_blank" rel="noopener noreferrer"
             className="flex-1 flex flex-col items-center gap-1 px-3 py-2 border-2 border-primary rounded-2xl">
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm">+</div>
-            <span className="text-xs font-semibold text-primary text-center">Réserver en ligne</span>
+            <span className="text-xs font-semibold text-primary text-center">Réserver</span>
           </a>
         )}
         {place.phone && (
           <a href={`tel:${place.phone}`}
             className="flex-1 flex flex-col items-center gap-1 px-3 py-2 border-2 border-primary rounded-2xl">
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm">▶</div>
-            <span className="text-xs font-semibold text-primary text-center">Appeler maintenant</span>
+            <span className="text-xs font-semibold text-primary text-center">Appeler</span>
           </a>
         )}
         <a href={`https://www.openstreetmap.org/?mlat=${place.lat}&mlon=${place.lon}&zoom=18`}
           target="_blank" rel="noopener noreferrer"
           className="flex-1 flex flex-col items-center gap-1 px-3 py-2 border-2 border-gray-200 rounded-2xl">
           <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-sm">🗺️</div>
-          <span className="text-xs font-semibold text-gray-600 text-center">Voir sur la carte</span>
+          <span className="text-xs font-semibold text-gray-600 text-center">Carte</span>
         </a>
       </div>
 
